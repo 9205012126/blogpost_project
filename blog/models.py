@@ -1,6 +1,10 @@
 from django.db import models
 
 # Create your models here.
-class JobsConfig(models.Model):
-    image = models.Imagefield(upload_to='images/')
-    summary = models.Charfield(max_length=200)
+
+
+class Blog(models.Model):
+    image = models.ImageField(upload_to='images/')
+    title = models.CharField(max_length=200)
+    body = models.CharField(max_length=824)
+    blog_date = models.DateField(auto_now=False,auto_now_add=False)
