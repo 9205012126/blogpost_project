@@ -2,4 +2,6 @@ from django.contrib import admin
 from blog.models import Blog
 
 # Register your models here.
-admin.site.register(Blog)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('title','body','blog_date')
+admin.site.register(Blog,ProductAdmin)
